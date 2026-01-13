@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- HTA Tag MUST be first for attributes like caption="no" to work reliably -->
+    <hta:application 
+        id="oHTA" 
+        applicationname="SuperProductivitySplash" 
+        border="none" 
+        caption="no" 
+        showintaskbar="yes" 
+        singleinstance="yes" 
+        sysmenu="no" 
+        scroll="no"
+        contextmenu="no"
+        selection="no"
+        version="1.0"
+    />
+    
+    <title>Super Productivite</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <script>
+        // Set size and position immediately
+        var w = 400;
+        var h = 300;
+        window.resizeTo(w, h);
+        window.moveTo((screen.width - w) / 2, (screen.height - h) / 2);
+    </script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f12;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            cursor: wait;
+            overflow: hidden; /* CRITICAL: No scrollbars */
+            border: 1px solid #333; /* Slight border definition */
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        /* Loading Bar */
+        .bar-bg {
+            width: 200px;
+            height: 3px;
+            background: #27272a;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            width: 60px;
+            height: 100%;
+            background: #6366f1;
+            position: absolute;
+            animation: slide 1.5s infinite ease-in-out;
+        }
+
+        @keyframes slide {
+            0% { left: -60px; }
+            100% { left: 100%; }
+        }
+
+        .text {
+            color: #a1a1aa;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .sub-text {
+            color: #555;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">✨ Super App</div>
+        
+        <div class="bar-bg">
+            <div class="bar-fill"></div>
+        </div>
+
+        <div class="text">Chargement...</div>
+        <div class="sub-text">(Le premier lancement est plus long, c'est normal)</div>
+    </div>
+</body>
+</html>

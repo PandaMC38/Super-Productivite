@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Productivité</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-icon">✨</span> Super App
+            </div>
+
+            <nav class="nav-menu" id="app-list-container">
+                <!-- App Items injected here -->
+                <div class="nav-item active" data-target="home">
+                    <span class="icon">🏠</span> Accueil
+                </div>
+            </nav>
+
+            <!-- Focus Settings (Dynamic Info) -->
+            <div id="focus-settings" class="sidebar-settings" style="display: none;">
+                <h4>Réglages Focus</h4>
+
+                <div class="control-group">
+                    <label>Statut</label>
+                    <button id="btn-toggle-focus" class="toggle-btn">Mettre en Pause</button>
+                </div>
+
+                <div class="control-group">
+                    <label>Raccourci</label>
+                    <input type="text" id="input-shortcut" class="shortcut-input" value="CommandOrControl+Shift+F"
+                        readonly placeholder="Cliquez pour changer">
+                </div>
+
+                <div class="control-group">
+                    <label>Taille <span id="val-size">100px</span></label>
+                    <input type="range" id="range-height" min="20" max="300" value="100">
+                </div>
+                <div class="control-group">
+                    <label>Opacité <span id="val-opacity">50%</span></label>
+                    <input type="range" id="range-opacity" min="0" max="1" step="0.1" value="0.5">
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="nav-item" id="btn-minimize">
+                    <span class="icon">—</span> Réduire
+                </div>
+                <div class="nav-item danger" id="btn-close">
+                    <span class="icon">✕</span> Quitter
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="drag-handle"></div>
+            <!-- Home View -->
+            <div id="view-home" class="view active">
+                <div class="hero">
+                    <h1>Bienvenue, Célia</h1>
+                    <p>Sélectionnez un outil dans la barre latérale pour commencer.</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <h3>Applications</h3>
+                        <p id="app-count">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Webview Container (Dynamic) -->
+            <div id="view-webapp" class="view">
+                <!-- <webview> -->
+            </div>
+        </main>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

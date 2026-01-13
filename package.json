@@ -1,0 +1,19 @@
+{
+    "name": "super-productivite",
+    "version": "1.0.0",
+    "description": "Suite d'outils de productivité tout-en-un",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "keywords": [
+        "productivity",
+        "tools",
+        "dashboard"
+    ],
+    "author": "Antigravity",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^28.0.0"
+    }
+}
